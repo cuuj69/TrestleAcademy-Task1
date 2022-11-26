@@ -3,6 +3,7 @@ from typing import Optional
 from pydantic import BaseModel
 import csv
 import hashlib
+import uvicorn
 
 
 class Info(BaseModel):
@@ -41,6 +42,8 @@ def create_user(person_id: int, credential: Info):
     return user_details[person_id]
 
 
+if __name__ == '__main__':
+    uvicorn.run(app)
 
 
 
